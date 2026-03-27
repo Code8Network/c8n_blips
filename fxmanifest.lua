@@ -2,7 +2,7 @@ fx_version 'cerulean'
 game 'gta5'
 
 name 'c8n_blips'
-author 'c8n'
+author 'Code 8 Network'
 description 'Standalone FiveM blip management system'
 version '1.0.0'
 
