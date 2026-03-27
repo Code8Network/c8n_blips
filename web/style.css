@@ -1,0 +1,128 @@
+:root {
+  color-scheme: dark;
+  --bg: rgba(10, 14, 22, 0.88);
+  --panel: rgba(22, 28, 41, 0.95);
+  --card: rgba(29, 36, 52, 0.92);
+  --text: #ebefff;
+  --muted: #98a2c6;
+  --accent: #53b3ff;
+  --danger: #ef5f7a;
+}
+
+* { box-sizing: border-box; font-family: Inter, Segoe UI, Arial, sans-serif; }
+body { margin: 0; color: var(--text); }
+
+#app {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+.hidden { display: none !important; }
+
+.panel {
+  width: min(1100px, 95vw);
+  max-height: 90vh;
+  overflow: auto;
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+  padding: 1.2rem;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.panel-header h1 { margin: 0; font-size: 1.4rem; }
+.panel-header p { margin: 0.2rem 0 0; color: var(--muted); }
+
+.card {
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+h2 { margin: 0 0 0.8rem; font-size: 1rem; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 0.7rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+input {
+  border: 1px solid rgba(255,255,255,0.09);
+  background: rgba(11,15,24,0.75);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.58rem 0.65rem;
+}
+
+.checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.65rem;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 0.65rem 0.9rem;
+  color: white;
+  cursor: pointer;
+}
+
+.primary {
+  background: linear-gradient(110deg, #2f87ff, #53b3ff);
+  margin-top: 1.5rem;
+}
+
+.ghost {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.columns {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+
+.blip-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.blip-item {
+  background: rgba(8, 11, 18, 0.65);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 0.65rem;
+}
+
+.blip-item .meta {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.actions { display: flex; gap: 0.5rem; margin-top: 0.55rem; }
+.actions .route { background: #2f87ff; }
+.actions .remove { background: var(--danger); }
+
+.empty { color: var(--muted); font-size: 0.86rem; }

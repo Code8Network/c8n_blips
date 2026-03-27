@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>c8n_blips</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app" class="hidden">
+    <div class="panel">
+      <header class="panel-header">
+        <div>
+          <h1>c8n_blips</h1>
+          <p>Blip Manager</p>
+        </div>
+        <button id="closeBtn" class="ghost">Close</button>
+      </header>
+
+      <section class="card">
+        <h2>Create Dynamic Blip</h2>
+        <form id="createForm" class="grid">
+          <label>Blip ID<input name="id" required placeholder="event_zone" /></label>
+          <label>Name<input name="name" required placeholder="Live Event" /></label>
+          <label>X<input name="x" type="number" step="0.01" required /></label>
+          <label>Y<input name="y" type="number" step="0.01" required /></label>
+          <label>Z<input name="z" type="number" step="0.01" required /></label>
+          <label>Sprite<input name="sprite" type="number" min="1" value="1" /></label>
+          <label>Color<input name="color" type="number" min="0" value="0" /></label>
+          <label>Scale<input name="scale" type="number" min="0.1" step="0.05" value="0.8" /></label>
+          <label class="checkbox"><input name="shortRange" type="checkbox" checked />Short range</label>
+          <button type="submit" class="primary">Create Blip</button>
+        </form>
+      </section>
+
+      <section class="columns">
+        <div class="card">
+          <h2>Dynamic Blips</h2>
+          <ul id="dynamicList" class="blip-list"></ul>
+        </div>
+        <div class="card">
+          <h2>Static Blips</h2>
+          <ul id="staticList" class="blip-list"></ul>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
