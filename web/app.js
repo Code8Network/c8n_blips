@@ -3,6 +3,9 @@ const closeBtn = document.getElementById('closeBtn');
 const createForm = document.getElementById('createForm');
 const dynamicList = document.getElementById('dynamicList');
 const staticList = document.getElementById('staticList');
+app.classList.add('hidden');
+app.style.display = 'none';
+document.body.classList.remove('ui-visible');
 
 const postNui = async (eventName, payload = {}) => {
   await fetch(`https://${GetParentResourceName()}/${eventName}`, {
@@ -63,7 +66,9 @@ window.addEventListener('message', (event) => {
   const data = event.data || {};
 
   if (data.action === 'toggle') {
+    app.style.display = data.open ? 'grid' : 'none';
     app.classList.toggle('hidden', !data.open);
+    document.body.classList.toggle('ui-visible', data.open === true);
     return;
   }
 

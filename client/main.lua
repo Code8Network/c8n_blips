@@ -98,12 +98,18 @@ end
 local function setMenuOpen(open)
     state.menuOpen = open == true
     SetNuiFocus(state.menuOpen, state.menuOpen)
+    SetNuiFocusKeepInput(state.menuOpen)
     SendNUIMessage({ action = 'toggle', open = state.menuOpen })
 
     if state.menuOpen then
         pushUiState()
     end
 end
+
+CreateThread(function()
+    Wait(0)
+    setMenuOpen(false)
+end)
 
 local function destroyBlip(handle)
     if handle and DoesBlipExist(handle) then
